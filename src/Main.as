@@ -18,12 +18,9 @@ package
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-			var _url:String = this.loaderInfo.loaderURL;
-			if (_url.indexOf("http://pixas.googlecode.com/") >= 0 || _url.indexOf("https://pixas.googlecode.com/") >= 0 || _url.indexOf("http://risonhuang.com/") >= 0)
-			{
-				new Mediator(this);
-			}
-		}
+
+            new Mediator(this);
+        }
 		
 	}
 	
