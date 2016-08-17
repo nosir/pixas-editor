@@ -1,3 +1,17 @@
-Pixas Editor is an online "WYSWYG" flash application which helps to build isometric pixel elements. With Pixas Editor, you can easily add and combine pixel elements, modify the properties. Also you can save and resume your project, export PNG file and generate pure ActionScript 3.0 source file which can be copied and pasted into other working simulations.
+# Pixas Editor
 
-MIT License: http://www.opensource.org/licenses/mit-license.php
+Pixas Editor is an online "WYSWYG" flash application which helps you to build isometric pixel elements. With Pixas Editor, you can easily add pixel elements, modify properties.
+
+And more, you can save / resume your project, export PNG file and generate pure ActionScript 3.0 source code which can be used in your AS3 project.
+
+## Play online
+
+[http://nosir.github.io/pixas-editor/](http://nosir.github.io/pixas-editor/)
+
+## About this project
+
+Time to say goodbye to the past. A endless game.Upda
+
+## Licence
+
+MIT
