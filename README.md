@@ -6,7 +6,13 @@ And more, you can save / resume your project, export PNG file and generate pure 
 
 ## Play it online
 
+This is Flash, so no iOS please:
+
 [http://nosir.github.io/pixas-editor/](http://nosir.github.io/pixas-editor/)
+
+## Libraries
+- [MinimalComps - Protecting the Flash Community from Flex since 2008](http://www.minimalcomps.com/)
+- [Pixas](http://nosir.github.io/pixas/)
 
 ## About this project
 
