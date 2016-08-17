@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>Pixas Editor - Build ISO Pixels Online</title>
+</head>
+<style type="text/css">
+body {margin:0;font-family:Verdana;}
+</style>
+<body>
+<div id="Main">
+</div>
+</body>
+</html>
+
+
+<script>
+//core lib
+var Event = {};
+Event.__addEventHandler = function(target,type,handler){try{if(target.addEventListener){target.addEventListener(type,handler,false);}else if(target.attachEvent){target.attachEvent("on"+type,handler);}else{target["on"+type]=handler;}}catch(e){};};
+Event.__removeEventHandler = function(target, type, handler){if (target.removeEventListener) {target.removeEventListener(type, handler, false);} else if (target.detachEvent) {target.detachEvent("on" + type, handler);} else {target["on" + type] = null;}};
+Event.__formatEvent = function (oEvent) {if (IE) {oEvent.charCode = (oEvent.type == "keypress" || oEvent.type == "keydown") ? oEvent.keyCode : 0;oEvent.eventPhase = 2;oEvent.isChar = (oEvent.charCode > 0);oEvent.pageX = oEvent.clientX + document.documentElement.scrollLeft;oEvent.pageY = oEvent.clientY + document.documentElement.scrollTop;oEvent.preventDefault = function () {this.returnValue = false;};if (oEvent.type == "mouseout") {oEvent.relatedTarget = oEvent.toElement;} else if (oEvent.type == "mouseover") {oEvent.relatedTarget = oEvent.fromElement;}oEvent.stopPropagation = function () {this.cancelBubble = true;};oEvent.target = oEvent.srcElement;oEvent.time = (new Date).getTime();}return oEvent;};
+Event.getEvent = function() {if (window.event) {return this.__formatEvent(window.event);} else {return Event.getEvent.caller.arguments[0];}};
+
+function $(str){if(str == "body"){if(IE){return document.body;}else{return document.documentElement;}}else{	return document.getElementById(str);}}
+function css(div,c){if((typeof c).toLowerCase() == "string"){div.className = c;}else{var d = div;for(var i in c){d.style[i] = c[i];}}}
+function inner(div,c){div.innerHTML = c;}
+function swfHTML(id,src,width,height,wmode,flashvars){var html = '<object id="'+id+'_ie" name="'+id+'" width="'+width+'" height="'+height+'" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="movie" value="'+src+'"><param name="bgcolor" value="#FFFFFF"><param name="AllowFullScreen" value="true"><param name="allowScriptAccess" value="always" /><param name="wmode" value="'+wmode+'" /><param name="FlashVars" value="&'+flashvars+'&"><embed bgcolor="#FFFFFF" id="'+id+'_other" name="'+id+'" width="'+width+'" height="'+height+'" src="'+src+'" FlashVars="&'+flashvars+'&" AllowFullScreen="true" allowScriptAccess="always" wmode="'+wmode+'" type="application/x-shockwave-flash"></embed></object>';return html;}
+function addEvt(div,type,handler){Event.__addEventHandler(div,type,handler);}
+var IE = navigator.userAgent.indexOf("compatible") > -1 && navigator.userAgent.indexOf("MSIE") > -1;
+</script>
+
+<script>
+//main logic
+inner($("Main"),swfHTML("Demo","pixas-editor.swf","100%","100%","opaque",""));
+addEvt(window, "resize", __onResize) ;
+function __onResize()
+{
+	//hack ie6
+	var newHeight = window.self.document.documentElement.clientHeight+"px";
+	css($("Main"),{position:"absolute",width:"100%",height:newHeight});
+}
+__onResize();
+</script>
