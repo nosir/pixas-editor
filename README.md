@@ -12,7 +12,7 @@ This is Flash, so no iOS please:
 
 ## Libraries
 - [MinimalComps - Protecting the Flash Community from Flex since 2008](http://www.minimalcomps.com/)
-- [Pixas](http://nosir.github.io/pixas/)
+- [Pixas](http://github.com/nosir/pixas/)
 
 ## About this project
 
